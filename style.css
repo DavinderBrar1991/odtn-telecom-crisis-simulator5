@@ -1,0 +1,454 @@
+/* ===============================
+   ODTN.NEWS Cyber Crisis Portal
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#08111f;
+    color:white;
+    line-height:1.6;
+}
+
+/* ---------- Breaking News ---------- */
+
+.ticker{
+    background:#c1121f;
+    color:white;
+    padding:10px;
+    font-weight:bold;
+}
+
+/* ---------- Header ---------- */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:#101826;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+}
+
+header h1{
+    color:#00d9ff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:.3s;
+    font-weight:600;
+}
+
+nav a:hover,
+nav a.active{
+    color:#00d9ff;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+    background:
+        linear-gradient(rgba(8,17,31,.80),rgba(8,17,31,.80)),
+        url("assets/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    min-height:80vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:40px;
+}
+
+.overlay{
+    max-width:850px;
+}
+
+.overlay h4{
+    color:#ff5252;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.overlay h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.overlay p{
+    color:#d6d6d6;
+    margin-bottom:35px;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn,
+.btn2{
+
+display:inline-block;
+padding:14px 28px;
+margin:10px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.btn{
+
+background:#00d9ff;
+color:black;
+
+}
+
+.btn:hover{
+
+background:#00b4d8;
+transform:translateY(-3px);
+
+}
+
+.btn2{
+
+border:2px solid #00d9ff;
+color:white;
+
+}
+
+.btn2:hover{
+
+background:#00d9ff;
+color:black;
+
+}
+
+/* ---------- Statistics ---------- */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+padding:60px 8%;
+
+}
+
+/* ---------- Cards ---------- */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+.card{
+
+background:#111d2f;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 0 15px rgba(0,217,255,.15);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 25px rgba(0,217,255,.5);
+
+}
+
+.card h2,
+.card h3{
+
+color:#00d9ff;
+
+margin-bottom:15px;
+
+}
+
+/* ---------- Sections ---------- */
+
+.overview,
+.features,
+.dashboard,
+.quiz,
+.about{
+
+padding:70px 8%;
+
+}
+
+.overview h2,
+.features h2,
+.dashboard h2,
+.about h2{
+
+color:#00d9ff;
+margin-bottom:20px;
+
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline{
+
+margin-top:30px;
+
+}
+
+.timeline-item{
+
+background:#111d2f;
+
+padding:20px;
+
+margin-bottom:20px;
+
+border-left:5px solid #00d9ff;
+
+border-radius:8px;
+
+}
+
+/* ---------- Quiz ---------- */
+
+.question{
+
+background:#111d2f;
+
+padding:25px;
+
+border-radius:12px;
+
+margin-bottom:30px;
+
+}
+
+.question button{
+
+width:100%;
+
+padding:14px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+background:#00d9ff;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.question button:hover{
+
+background:#00b4d8;
+
+}
+
+.result{
+
+text-align:center;
+
+font-size:24px;
+
+margin-top:30px;
+
+font-weight:bold;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:#101826;
+
+margin-top:40px;
+
+}
+
+/* ---------- Animation ---------- */
+
+.card{
+
+animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+header{
+
+flex-direction:column;
+
+}
+
+nav{
+
+margin-top:15px;
+
+}
+
+.overlay h1{
+
+font-size:34px;
+
+}
+
+.btn,
+.btn2{
+
+display:block;
+
+margin:15px auto;
+
+}
+
+}
+/* Progress Bar */
+
+.progress{
+
+width:100%;
+height:30px;
+
+background:#23324b;
+
+border-radius:25px;
+
+overflow:hidden;
+
+margin-top:20px;
+
+}
+
+.progress-bar{
+
+height:100%;
+
+background:linear-gradient(90deg,#00d9ff,#00ff99);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+color:black;
+
+animation:load 2s ease;
+
+}
+
+@keyframes load{
+
+from{
+
+width:0;
+
+}
+
+}
+.feedback{
+
+margin-top:15px;
+
+font-weight:bold;
+
+color:#00d9ff;
+
+}
+
+.result{
+
+margin-top:40px;
+
+padding:30px;
+
+background:#111d2f;
+
+border-radius:10px;
+
+text-align:center;
+
+font-size:22px;
+
+}

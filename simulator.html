@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyber Crisis Simulator | ODTN.NEWS</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/favicon.ico">
+
+</head>
+
+<body>
+
+<div class="ticker">
+<marquee>
+🎮 INCIDENT COMMANDER SIMULATOR • Make the best cybersecurity decisions to protect ODTN Telecom.
+</marquee>
+</div>
+
+<header>
+
+<div class="logo">
+<img src="assets/logo.png" alt="Logo">
+<h1>ODTN.NEWS</h1>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="simulator.html" class="active">Simulator</a>
+<a href="about.html">About</a>
+</nav>
+
+</header>
+
+<section class="quiz">
+
+<h2>Cyber Crisis Decision Simulator</h2>
+
+<p>
+You are the Incident Commander for ODTN Telecom.
+Choose the best action for each situation.
+</p>
+
+<!-- Question 1 -->
+
+<div class="question">
+
+<h3>Question 1</h3>
+
+<p>
+Customers report a nationwide outage before monitoring systems detect it.
+What should you do first?
+</p>
+
+<button onclick="correct(this)">
+Declare a Cyber Incident
+</button>
+
+<button onclick="wrong(this)">
+Ignore Customer Reports
+</button>
+
+<button onclick="wrong(this)">
+Wait Until Tomorrow
+</button>
+
+<div class="feedback"></div>
+
+</div>
+
+<!-- Question 2 -->
+
+<div class="question">
+
+<h3>Question 2</h3>
+
+<p>
+Attackers are moving laterally through the network.
+</p>
+
+<button onclick="correct(this)">
+Isolate Affected Systems
+</button>
+
+<button onclick="wrong(this)">
+Restart Every Computer
+</button>
+
+<button onclick="wrong(this)">
+Continue Normal Operations
+</button>
+
+<div class="feedback"></div>
+
+</div>
+
+<!-- Question 3 -->
+
+<div class="question">
+
+<h3>Question 3</h3>
+
+<p>
+Healthcare services are being affected.
+</p>
+
+<button onclick="correct(this)">
+Activate the Business Continuity Plan
+</button>
+
+<button onclick="wrong(this)">
+Wait for More Complaints
+</button>
+
+<button onclick="wrong(this)">
+Ignore the Situation
+</button>
+
+<div class="feedback"></div>
+
+</div>
+
+<!-- Question 4 -->
+
+<div class="question">
+
+<h3>Question 4</h3>
+
+<p>
+Administrator credentials may have been stolen.
+</p>
+
+<button onclick="correct(this)">
+Reset Privileged Accounts
+</button>
+
+<button onclick="wrong(this)">
+Do Nothing
+</button>
+
+<button onclick="wrong(this)">
+Delete All User Accounts
+</button>
+
+<div class="feedback"></div>
+
+</div>
+
+<!-- Question 5 -->
+
+<div class="question">
+
+<h3>Question 5</h3>
+
+<p>
+The attack has been contained.
+What should happen next?
+</p>
+
+<button onclick="correct(this)">
+Conduct a Lessons Learned Review
+</button>
+
+<button onclick="wrong(this)">
+Turn Off Monitoring
+</button>
+
+<button onclick="wrong(this)">
+Forget About the Incident
+</button>
+
+<div class="feedback"></div>
+
+</div>
+
+<div class="result" id="result">
+
+Score: 0 / 5
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 ODTN.NEWS
+
+Cyber Crisis Response Portal
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
