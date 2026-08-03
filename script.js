@@ -1,106 +1,111 @@
+// Initialize state variables
 let score = 0;
 let answered = 0;
 
-document.addEventListener("DOMContentLoaded", function(){
-
-let quizButtons = document.querySelectorAll(".quiz-btn");
-
-quizButtons.forEach(function(btn){
-
-btn.addEventListener("click", function(){
-
-if(btn.dataset.answer === "correct"){
-
-correct(btn);
-
-} else {
-
-wrong(btn);
-
-}
-
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Initialize Quiz Logic (if present on current page)
+    initQuiz();
 });
 
-});
+function initQuiz() {
+    const quizButtons = document.querySelectorAll(".quiz-btn");
+    
+    // Guard clause: Exit if not on the simulator page
+    if (quizButtons.length === 0) return;
 
-});
+    quizButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            if (btn.disabled) return;
 
-function correct(button){
-
-if(button.disabled) return;
-
-score++;
-answered++;
-
-button.style.background="#00cc66";
-button.innerHTML="✔ Correct";
-
-let feedback = button.parentElement.querySelector(".feedback");
-
-feedback.innerHTML="✅ Excellent decision. This helps contain the incident quickly.";
-
-disable(button);
-
-update();
-
+            if (btn.dataset.answer === "correct") {
+                handleCorrect(btn);
+            } else {
+                handleWrong(btn);
+            }
+        });
+    });
 }
 
-function wrong(button){
+function handleCorrect(button) {
+    score++;
+    answered++;
 
-if(button.disabled) return;
+    button.classList.add("correct");
+    button.innerHTML = "✔ Correct";
 
-answered++;
-
-button.style.background="#cc3333";
-button.innerHTML="✖ Incorrect";
-
-let feedback = button.parentElement.querySelector(".feedback");
-
-feedback.innerHTML="⚠ This decision would increase the impact of the cyberattack.";
-
-disable(button);
-
-update();
-
+    showFeedback(button, "✅ Excellent decision. This helps contain the incident quickly.");
+    disableGroup(button);
+    updateResults();
 }
 
-function disable(button){
+function handleWrong(button) {
+    answered++;
 
-let buttons = button.parentElement.querySelectorAll("button");
+    button.classList.add("wrong");
+    button.innerHTML = "✖ Incorrect";
 
-buttons.forEach(btn=>btn.disabled=true);
-
+    showFeedback(button, "⚠️ This decision would increase the impact of the cyberattack.");
+    disableGroup(button);
+    updateResults();
 }
 
-function update(){
-
-let result=document.getElementById("result");
-
-result.innerHTML="Score: "+score+" / 5";
-
-if(answered===5){
-
-if(score===5){
-
-result.innerHTML=
-"🏆 Congratulations!<br><br>You scored 5/5 and successfully managed the cyber crisis.<br><br><strong>Certificate: Incident Commander</strong>";
-
+function showFeedback(button, message) {
+    const parent = button.closest(".question-card") || button.parentElement;
+    const feedback = parent.querySelector(".feedback");
+    
+    if (feedback) {
+        feedback.innerHTML = message;
+        feedback.classList.add("visible");
+    }
 }
 
-else if(score>=3){
-
-result.innerHTML=
-"👍 Great Job!<br><br>Your score was "+score+"/5.<br>You made good decisions, but there is room for improvement.";
-
+function disableGroup(button) {
+    const parent = button.closest(".question-card") || button.parentElement;
+    const buttons = parent.querySelectorAll("button");
+    
+    buttons.forEach((btn) => {
+        btn.disabled = true;
+    });
 }
 
-else{
+function updateResults() {
+    const resultContainer = document.getElementById("result");
+    if (!resultContainer) return;
 
-result.innerHTML=
-"⚠ Score: "+score+"/5.<br>Your decisions allowed the attack to cause greater disruption.<br>Review the incident response process and try again.";
+    // Dynamically calculate total questions instead of hardcoding 5
+    const totalQuestions = document.querySelectorAll(".question-card, .quiz-question").length || 5;
 
-}
+    resultContainer.innerHTML = `Score: ${score} / ${totalQuestions}`;
 
-}
+    if (answered === totalQuestions) {
+        let finalMarkup = "";
 
+        if (score === totalQuestions) {
+            finalMarkup = `
+                <div class="result-box success">
+                    <h3>🏆 Congratulations!</h3>
+                    <p>You scored ${score}/${totalQuestions} and successfully managed the cyber crisis.</p>
+                    <hr>
+                    <p><strong>Certificate Awarded: Incident Commander</strong></p>
+                </div>
+            `;
+        } else if (score >= Math.ceil(totalQuestions * 0.6)) {
+            finalMarkup = `
+                <div class="result-box warning">
+                    <h3>👍 Great Job!</h3>
+                    <p>Your score was ${score}/${totalQuestions}. You made good decisions, but there is room for improvement.</p>
+                </div>
+            `;
+        } else {
+            finalMarkup = `
+                <div class="result-box danger">
+                    <h3>⚠️ Action Required</h3>
+                    <p>Score: ${score}/${totalQuestions}. Your decisions allowed the attack to cause greater disruption.</p>
+                    <p>Review the incident response process and try again.</p>
+                </div>
+            `;
+        }
+
+        resultContainer.innerHTML = finalMarkup;
+    }
 }
