@@ -1,6 +1,30 @@
 let score = 0;
 let answered = 0;
 
+document.addEventListener("DOMContentLoaded", function(){
+
+let quizButtons = document.querySelectorAll(".quiz-btn");
+
+quizButtons.forEach(function(btn){
+
+btn.addEventListener("click", function(){
+
+if(btn.dataset.answer === "correct"){
+
+correct(btn);
+
+} else {
+
+wrong(btn);
+
+}
+
+});
+
+});
+
+});
+
 function correct(button){
 
 if(button.disabled) return;
