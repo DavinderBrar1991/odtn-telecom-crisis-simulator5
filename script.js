@@ -13,6 +13,10 @@ function initQuiz() {
     // Guard clause: Exit if not on the simulator page
     if (quizButtons.length === 0) return;
 
+    // Reset counters when starting/re-initializing quiz
+    score = 0;
+    answered = 0;
+
     quizButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             if (btn.disabled) return;
@@ -31,7 +35,7 @@ function handleCorrect(button) {
     answered++;
 
     button.classList.add("correct");
-    button.innerHTML = "✔ Correct";
+    button.textContent = "✔ Correct";
 
     showFeedback(button, "✅ Excellent decision. This helps contain the incident quickly.");
     disableGroup(button);
@@ -42,7 +46,7 @@ function handleWrong(button) {
     answered++;
 
     button.classList.add("wrong");
-    button.innerHTML = "✖ Incorrect";
+    button.textContent = "✖ Incorrect";
 
     showFeedback(button, "⚠️ This decision would increase the impact of the cyberattack.");
     disableGroup(button);
@@ -54,7 +58,8 @@ function showFeedback(button, message) {
     const feedback = parent.querySelector(".feedback");
     
     if (feedback) {
-        feedback.innerHTML = message;
+        // Use textContent instead of innerHTML to prevent potential XSS
+        feedback.textContent = message;
         feedback.classList.add("visible");
     }
 }
@@ -75,7 +80,8 @@ function updateResults() {
     // Dynamically calculate total questions instead of hardcoding 5
     const totalQuestions = document.querySelectorAll(".question-card, .quiz-question").length || 5;
 
-    resultContainer.innerHTML = `Score: ${score} / ${totalQuestions}`;
+    // Initial score text output safely set via textContent
+    resultContainer.textContent = `Score: ${score} / ${totalQuestions}`;
 
     if (answered === totalQuestions) {
         let finalMarkup = "";
