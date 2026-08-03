@@ -282,6 +282,11 @@ nav a.active {
     transition: width 1s ease-in-out;
 }
 
+/* Progress Bar Width Helper */
+.progress-76 {
+    width: 76%;
+}
+
 @keyframes load {
     from { width: 0; }
 }
