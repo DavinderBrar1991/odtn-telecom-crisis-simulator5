@@ -3,310 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'">
+    
     <title>Executive Dashboard | ODTN.NEWS</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.png">
+    <link rel="icon" href="assets/favicon.ico">
 </head>
-
 <body>
 
-<div class="ticker">
-<marquee>
-🚨 LIVE UPDATE • Incident Response Team Active • Telecom services gradually recovering • Recovery Progress: 76%
-</marquee>
-</div>
-
-<header>
-
-<div class="logo">
-
-<img src="assets/logo.png" alt="Logo">
-
-<h1>ODTN.NEWS</h1>
-
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-<a href="dashboard.html" class="active">Dashboard</a>
-<a href="simulator.html">Simulator</a>
-<a href="about.html">About</a>
-
-</nav>
-
-</header>
-
-<section class="dashboard">
-
-<h2>Executive Dashboard</h2>
-
-<p>
-Monitor the current cyber incident affecting ODTN Telecom.
-This dashboard provides executives with live operational
-status, response progress, and recovery information.
-</p>
-
-<br>
-
-<div class="cards">
-
-<div class="card">
-
-<h2>🔴 Threat Level</h2>
-
-<h1 class="text-critical">CRITICAL</h1>
-
-</div>
-
-<div class="card">
-
-<h2>👥 Customers Impacted</h2>
-
-<h1>2.4 Million</h1>
-
-</div>
-
-<div class="card">
-
-<h2>📡 Network Availability</h2>
-
-<h1>42%</h1>
-
-</div>
-
-<div class="card">
-
-<h2>🛠 Recovery</h2>
-
-<h1>76%</h1>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="overview">
-
-<h2>Recovery Progress</h2>
-
-<div class="progress">
-
-<div class="progress-bar progress-76">
-
-76%
-
-</div>
-
-</div>
-
-</section>
-
-<section class="dashboard">
-
-<h2>Critical Services</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>🏥 Healthcare</h3>
-
-<p>Partial Service</p>
-
-</div>
-
-<div class="card">
-
-<h3>🏦 Banking</h3>
-
-<p>Operational</p>
-
-</div>
-
-<div class="card">
-
-<h3>🚓 Emergency Services</h3>
-
-<p>Operational</p>
-
-</div>
-
-<div class="card">
-
-<h3>📱 Mobile Network</h3>
-
-<p>Major Outage</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="dashboard">
-
-<h2>Incident Timeline</h2>
-
-<div class="timeline">
-
-<div class="timeline-item">
-
-<strong>09:00</strong>
-
-<p>Customers begin reporting nationwide telecom outages.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<strong>09:30</strong>
-
-<p>Security Operations Center starts investigation.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<strong>10:00</strong>
-
-<p>Cyber Incident officially declared.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<strong>10:30</strong>
-
-<p>Compromised network segments isolated.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<strong>12:00</strong>
-
-<p>Recovery teams begin restoring services.</p>
-
-</div>
-
-<div class="timeline-item">
-
-<strong>16:00</strong>
-
-<p>Most critical services restored.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="dashboard">
-
-<h2>Root Cause Analysis</h2>
-
-<div class="card">
-
-<p>
-
-Attackers compromised privileged administrator credentials
-and installed malicious firmware on core telecom
-network infrastructure.
-
-This disrupted routing services and caused
-nationwide telecommunications outages.
-
-</p>
-
-</div>
-
-</section>
-
-<section class="dashboard">
-
-<h2>Actions Taken</h2>
-
-<div class="cards">
-
-<div class="card">
-
-✔ Incident Response Team Activated
-
-</div>
-
-<div class="card">
-
-✔ Network Segments Isolated
-
-</div>
-
-<div class="card">
-
-✔ Digital Evidence Preserved
-
-</div>
-
-<div class="card">
-
-✔ Critical Services Restored
-
-</div>
-
-</div>
-
-</section>
-
-<section class="dashboard">
-
-<h2>Recommendations</h2>
-
-<div class="cards">
-
-<div class="card">
-
-Enable Multi-Factor Authentication
-
-</div>
-
-<div class="card">
-
-Improve Continuous Monitoring
-
-</div>
-
-<div class="card">
-
-Conduct Regular Tabletop Exercises
-
-</div>
-
-<div class="card">
-
-Improve Identity & Access Management
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>
-
-© 2026 ODTN.NEWS
-
-Cyber Crisis Response Portal
-
-</p>
-
-</footer>
-
-<script src="script.js"></script>
+    <!-- Accessible Live Ticker replacing obsolete <marquee> -->
+    <div class="ticker" role="region" aria-label="Live Incident Status Updates">
+        <p class="ticker-text">
+            🚨 LIVE UPDATE • Incident Response Team Active • Telecom services gradually recovering • Recovery Progress: 76%
+        </p>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="ODTN Logo" width="50" height="50">
+            <h1>ODTN.NEWS</h1>
+        </div>
+
+        <nav aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html" class="active" aria-current="page">Dashboard</a>
+            <a href="simulator.html">Simulator</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <h2>Executive Dashboard</h2>
+            <p>
+                Monitor the current cyber incident affecting ODTN Telecom. 
+                This dashboard provides executives with live operational status, response progress, and recovery information.
+            </p>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🔴 Threat Level</h3>
+                    <p class="text-critical stat-large">CRITICAL</p>
+                </div>
+
+                <div class="card">
+                    <h3>👥 Customers Impacted</h3>
+                    <p class="stat-large">2.4 Million</p>
+                </div>
+
+                <div class="card">
+                    <h3>📡 Network Availability</h3>
+                    <p class="stat-large">42%</p>
+                </div>
+
+                <div class="card">
+                    <h3>🛠 Recovery</h3>
+                    <p class="stat-large">76%</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="overview">
+            <h2>Recovery Progress</h2>
+            <div class="progress" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-76" style="width: 76%;">
+                    76%
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <h2>Critical Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🏥 Healthcare</h3>
+                    <p>Partial Service</p>
+                </div>
+
+                <div class="card">
+                    <h3>🏦 Banking</h3>
+                    <p>Operational</p>
+                </div>
+
+                <div class="card">
+                    <h3>🚓 Emergency Services</h3>
+                    <p>Operational</p>
+                </div>
+
+                <div class="card">
+                    <h3>📱 Mobile Network</h3>
+                    <p>Major Outage</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <h2>Incident Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <time datetime="09:00">09:00</time>
+                    <p>Customers begin reporting nationwide telecom outages.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <time datetime="09:30">09:30</time>
+                    <p>Security Operations Center starts investigation.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <time datetime="10:00">10:00</time>
+                    <p>Cyber Incident officially declared.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <time datetime="10:30">10:30</time>
+                    <p>Compromised network segments isolated.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <time datetime="12:00">12:00</time>
+                    <p>Recovery teams begin restoring services.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <time datetime="16:00">16:00</time>
+                    <p>Most critical services restored.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <h2>Root Cause Analysis</h2>
+            <div class="card">
+                <p>
+                    Attackers compromised privileged administrator credentials and installed malicious firmware 
+                    on core telecom network infrastructure. This disrupted routing services and caused nationwide telecommunications outages.
+                </p>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <h2>Actions Taken</h2>
+            <ul class="cards card-list">
+                <li class="card">✔ Incident Response Team Activated</li>
+                <li class="card">✔ Network Segments Isolated</li>
+                <li class="card">✔ Digital Evidence Preserved</li>
+                <li class="card">✔ Critical Services Restored</li>
+            </ul>
+        </section>
+
+        <section class="dashboard">
+            <h2>Recommendations</h2>
+            <ul class="cards card-list">
+                <li class="card">Enable Multi-Factor Authentication</li>
+                <li class="card">Improve Continuous Monitoring</li>
+                <li class="card">Conduct Regular Tabletop Exercises</li>
+                <li class="card">Improve Identity & Access Management</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ODTN.NEWS — Cyber Crisis Response Portal</p>
+    </footer>
+
+    <script src="script.js" defer></script>
 
 </body>
 </html>
