@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'">
 
 <title>Cyber Crisis Simulator | ODTN.NEWS</title>
 
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="assets/favicon.ico">
+<link rel="icon" href="assets/favicon.png">
 
 </head>
 
@@ -55,15 +56,15 @@ Customers report a nationwide outage before monitoring systems detect it.
 What should you do first?
 </p>
 
-<button onclick="correct(this)">
+<button class="quiz-btn" data-answer="correct">
 Declare a Cyber Incident
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Ignore Customer Reports
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Wait Until Tomorrow
 </button>
 
@@ -81,15 +82,15 @@ Wait Until Tomorrow
 Attackers are moving laterally through the network.
 </p>
 
-<button onclick="correct(this)">
+<button class="quiz-btn" data-answer="correct">
 Isolate Affected Systems
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Restart Every Computer
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Continue Normal Operations
 </button>
 
@@ -107,15 +108,15 @@ Continue Normal Operations
 Healthcare services are being affected.
 </p>
 
-<button onclick="correct(this)">
+<button class="quiz-btn" data-answer="correct">
 Activate the Business Continuity Plan
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Wait for More Complaints
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Ignore the Situation
 </button>
 
@@ -133,15 +134,15 @@ Ignore the Situation
 Administrator credentials may have been stolen.
 </p>
 
-<button onclick="correct(this)">
+<button class="quiz-btn" data-answer="correct">
 Reset Privileged Accounts
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Do Nothing
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Delete All User Accounts
 </button>
 
@@ -160,15 +161,15 @@ The attack has been contained.
 What should happen next?
 </p>
 
-<button onclick="correct(this)">
+<button class="quiz-btn" data-answer="correct">
 Conduct a Lessons Learned Review
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Turn Off Monitoring
 </button>
 
-<button onclick="wrong(this)">
+<button class="quiz-btn" data-answer="wrong">
 Forget About the Incident
 </button>
 
