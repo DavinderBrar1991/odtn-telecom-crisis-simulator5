@@ -1,203 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'">
+    
+    <title>Cyber Crisis Simulator | ODTN.NEWS</title>
 
-<title>Cyber Crisis Simulator | ODTN.NEWS</title>
-
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="assets/favicon.png">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico">
 </head>
-
 <body>
 
-<div class="ticker">
-<marquee>
-🎮 INCIDENT COMMANDER SIMULATOR • Make the best cybersecurity decisions to protect ODTN Telecom.
-</marquee>
-</div>
+    <!-- Accessible Ticker replacing obsolete <marquee> -->
+    <div class="ticker" role="region" aria-label="Simulator Instructions Ticker">
+        <p class="ticker-text">
+            🎮 INCIDENT COMMANDER SIMULATOR • Make the best cybersecurity decisions to protect ODTN Telecom.
+        </p>
+    </div>
 
-<header>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="ODTN Logo" width="50" height="50">
+            <h1>ODTN.NEWS</h1>
+        </div>
 
-<div class="logo">
-<img src="assets/logo.png" alt="Logo">
-<h1>ODTN.NEWS</h1>
-</div>
+        <nav aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="simulator.html" class="active" aria-current="page">Simulator</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="dashboard.html">Dashboard</a>
-<a href="simulator.html" class="active">Simulator</a>
-<a href="about.html">About</a>
-</nav>
+    <main>
+        <section class="quiz">
+            <h2>Cyber Crisis Decision Simulator</h2>
+            <p class="subtitle">
+                You are the Incident Commander for ODTN Telecom. Choose the best action for each situation.
+            </p>
 
-</header>
+            <!-- Question 1 -->
+            <article class="question-card">
+                <h3>Question 1</h3>
+                <p>Customers report a nationwide outage before monitoring systems detect it. What should you do first?</p>
+                <div class="button-group">
+                    <button type="button" class="quiz-btn" data-answer="correct">Declare a Cyber Incident</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Ignore Customer Reports</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Wait Until Tomorrow</button>
+                </div>
+                <div class="feedback" aria-live="polite"></div>
+            </article>
 
-<section class="quiz">
+            <!-- Question 2 -->
+            <article class="question-card">
+                <h3>Question 2</h3>
+                <p>Attackers are moving laterally through the network. What is your containment strategy?</p>
+                <div class="button-group">
+                    <button type="button" class="quiz-btn" data-answer="correct">Isolate Affected Systems</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Restart Every Computer</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Continue Normal Operations</button>
+                </div>
+                <div class="feedback" aria-live="polite"></div>
+            </article>
 
-<h2>Cyber Crisis Decision Simulator</h2>
+            <!-- Question 3 -->
+            <article class="question-card">
+                <h3>Question 3</h3>
+                <p>Healthcare services relying on the network are being affected. How do you respond?</p>
+                <div class="button-group">
+                    <button type="button" class="quiz-btn" data-answer="correct">Activate the Business Continuity Plan</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Wait for More Complaints</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Ignore the Situation</button>
+                </div>
+                <div class="feedback" aria-live="polite"></div>
+            </article>
 
-<p>
-You are the Incident Commander for ODTN Telecom.
-Choose the best action for each situation.
-</p>
+            <!-- Question 4 -->
+            <article class="question-card">
+                <h3>Question 4</h3>
+                <p>Forensics indicate privileged administrator credentials may have been stolen.</p>
+                <div class="button-group">
+                    <button type="button" class="quiz-btn" data-answer="correct">Reset Privileged Accounts</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Do Nothing</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Delete All User Accounts</button>
+                </div>
+                <div class="feedback" aria-live="polite"></div>
+            </article>
 
-<!-- Question 1 -->
+            <!-- Question 5 -->
+            <article class="question-card">
+                <h3>Question 5</h3>
+                <p>The attack has been contained and services are restored. What should happen next?</p>
+                <div class="button-group">
+                    <button type="button" class="quiz-btn" data-answer="correct">Conduct a Lessons Learned Review</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Turn Off Monitoring</button>
+                    <button type="button" class="quiz-btn" data-answer="wrong">Forget About the Incident</button>
+                </div>
+                <div class="feedback" aria-live="polite"></div>
+            </article>
 
-<div class="question">
+            <!-- Dynamic Results Container -->
+            <div class="result" id="result" aria-live="polite">
+                Score: 0 / 5
+            </div>
+        </section>
+    </main>
 
-<h3>Question 1</h3>
+    <footer>
+        <p>&copy; 2026 ODTN.NEWS — Cyber Crisis Response Portal</p>
+    </footer>
 
-<p>
-Customers report a nationwide outage before monitoring systems detect it.
-What should you do first?
-</p>
-
-<button class="quiz-btn" data-answer="correct">
-Declare a Cyber Incident
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Ignore Customer Reports
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Wait Until Tomorrow
-</button>
-
-<div class="feedback"></div>
-
-</div>
-
-<!-- Question 2 -->
-
-<div class="question">
-
-<h3>Question 2</h3>
-
-<p>
-Attackers are moving laterally through the network.
-</p>
-
-<button class="quiz-btn" data-answer="correct">
-Isolate Affected Systems
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Restart Every Computer
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Continue Normal Operations
-</button>
-
-<div class="feedback"></div>
-
-</div>
-
-<!-- Question 3 -->
-
-<div class="question">
-
-<h3>Question 3</h3>
-
-<p>
-Healthcare services are being affected.
-</p>
-
-<button class="quiz-btn" data-answer="correct">
-Activate the Business Continuity Plan
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Wait for More Complaints
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Ignore the Situation
-</button>
-
-<div class="feedback"></div>
-
-</div>
-
-<!-- Question 4 -->
-
-<div class="question">
-
-<h3>Question 4</h3>
-
-<p>
-Administrator credentials may have been stolen.
-</p>
-
-<button class="quiz-btn" data-answer="correct">
-Reset Privileged Accounts
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Do Nothing
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Delete All User Accounts
-</button>
-
-<div class="feedback"></div>
-
-</div>
-
-<!-- Question 5 -->
-
-<div class="question">
-
-<h3>Question 5</h3>
-
-<p>
-The attack has been contained.
-What should happen next?
-</p>
-
-<button class="quiz-btn" data-answer="correct">
-Conduct a Lessons Learned Review
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Turn Off Monitoring
-</button>
-
-<button class="quiz-btn" data-answer="wrong">
-Forget About the Incident
-</button>
-
-<div class="feedback"></div>
-
-</div>
-
-<div class="result" id="result">
-
-Score: 0 / 5
-
-</div>
-
-</section>
-
-<footer>
-
-<p>
-
-© 2026 ODTN.NEWS
-
-Cyber Crisis Response Portal
-
-</p>
-
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>
